@@ -1,0 +1,422 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color: lightblue;
+	/*text-align: center;
+	display: inline-block;*/
+}
+
+/*Esta media querry es para centrar la página para anchos superiores a 1600px, considerar el aspecto líquido  100% de la página para limitar el ancho líquido de otros elementos y no del contenedor general*/
+
+@media screen and (min-width:1600px){
+
+div#wrapper{
+	overflow: hidden;
+	/*border: 2px solid black;*/
+	width: 1580px;
+	margin: 0 auto;
+}
+
+}
+
+div#wrapper{
+	overflow: hidden;
+}
+
+/*--------------------------------------*/
+/*Estilos barra Contenedora del Menú
+
+Por DEFECTO:*/
+
+
+
+div#contentmenu img{
+
+ display: none;/* POR DEFECTO, luego cambiar al visualizar la barra*/
+
+}
+
+
+/*div#contentmenu{
+	/*border: 1px solid orange;
+	overflow: hidden;
+
+}*/
+
+p.autor{
+	float: right;
+	color: white;
+	font-size: 90%;
+	font-weight: bolder;
+	letter-spacing: 2px;
+	text-align: center;
+	margin: 40px;
+}
+
+
+/*Estilos CSS Sitema de Navegación
+
+Menú de Navegación Principal*/
+
+ul#menu{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	padding-left: 0px;
+	margin: 0px;
+	background-color: white;
+
+	/*visibility: visible; definir por defecto el comportamiento de un elemento no significa que predomine en contra de lo definido en una media querry. Se resuelve: si se define el comportamiento de un elemento a través de mediq querry , su contrapartida debera quedar definida con la correspondiente media querry*/
+
+
+}
+
+ul#menu li a{
+	color: gray;
+	font-size: 130%;
+	font-family: tahoma;
+	text-decoration: none;
+	display: block;/*OK*/
+	text-align: center;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	border-left: 1px solid black;
+
+}
+
+ul#menu li a:visited {
+	color: steelblue;
+}
+
+ul#menu li a.activo:active{
+	text-decoration: underline!important;
+}
+
+ul#menu li.posicion-AAA a{
+	border-left: none!important;
+}
+
+ul#menu li{
+	list-style-type: none;
+	float: left;
+	width: 20%;
+}
+
+
+/*Media Querries para los elementos del Menú*/
+
+@media screen and (max-width:800px){
+
+	div#barraresponsiva{
+		position: relative;
+		width: 100%;
+		height: 49px;
+		background-color:;
+		border-bottom: 1px solid gray;
+		box-shadow:0 0 10px #333333, 1px 1px 200px white inset;
+		visibility: visible;
+
+	}
+
+
+	ul#menu li{
+		width: 100%;
+	}
+
+	ul#menu li a{
+		border: none;/*Confirmar si con esta propiedad se soluciona el borde  blanco en smartphone*/
+		background-color: lightblue;
+		color: white;
+	}
+
+	div#contentmenu{
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		z-index: 10;/*Importante asignar esta propiedad para elementos definidos como FIXED*/
+		background-color: lightblue;
+		/*min-width: 300px; Verificar esta regla con otro navegador que permita achicar el ancho de visualización al mínimo posible*/
+		visibility: hidden; /*Esta propiedad se deberá asignar con JS, Funcion que haga invisible el menu principal al hacer click sobre el icono del Menu*/
+		min-height: 300px;
+		min-width: 300px;
+
+	}
+
+
+	ul#menu{
+		width: 250px!important;
+		/*height: 180px!important;Se verifica que al quitar esta propiedad funciona igualmente la propiedad margin-top:-90px!important; Se estima que se debe a que el navegador asigna un height: auto; respentando, entonces, la posision de centrado definida en la propiedad margin-top.*/
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -90px!important;
+		margin-left: -125px!important;
+		visibility: hidden;
+
+	}
+
+	div#contentmenu img{
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	display: inline;
+	width: 45px;
+	padding: 5px;
+	cursor: pointer;
+
+	/*border: 1px solid white;*/
+	visibility: visible;/*Esta propiedad permitira que cuando se oculte el menuprincipal el elemento: AAA y el icono de menú permanescan visibles*/
+}
+
+	ul#menu li.posicion-AAA{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 70px;
+	visibility: visible; /*Esta propiedad permitira que cuando se oculte el menuprincipal el elemento: AAA y el icono de menú permanescan visibles*/ 
+}
+
+ul#menu li.posicion-AAA a{
+	color: black;
+	background-color: transparent;
+}
+
+body#cuerpo{
+		overflow-x: hidden!important;/*Agregar important porque es cambiado desde JS y predomina propiedad*/
+	}
+
+h1{
+	margin-top: 60px!important;
+}
+
+ul#MenuS{
+	z-index: 1;
+}
+
+/*La precedente media querry se lee de la siguiente manera: "Hasta una maximo de 800px mantener el estilo definido en esta regla de estilo"*/
+}
+
+@media screen and (min-width:801px){
+	ul#menu{
+		visibility: visible!important;
+
+	}
+	/*div#barraresponsiva{
+		visibility: hidden;
+	}*/
+	#cuerpo{
+		/*overflow-x: hidden!important;/*Agregar important porque es cambiado desde JS y predomina propiedad*/
+		overflow-y: scroll!important;
+	}
+	body#cuerpo{
+		overflow-x: hidden!important;/*Agregar important porque es cambiado desde JS y predomina propiedad*/
+	} /*Esta linea fue definida el 19/01/2021*/
+
+
+}
+
+
+
+
+/*----------------------------FIN--------------------------------------*/
+
+/*Pie de Página*/
+
+div#Socalo{
+	width: 100%;
+	height: auto;
+	/*border-top: 5px solid silver;
+	border-bottom: 5px solid silver;*/
+	text-align: center;
+	overflow: hidden;
+	margin-bottom: 100px;
+	background-color: white;
+}
+
+
+ul#MenuS{
+	width: 100%;
+	margin-left: -40px;
+
+	/*padding-left: 0px;*/
+	/*border: 1px solid green;*/
+}
+
+ul#MenuS li{
+	position: relative;
+	display: inline-block;
+	width: 300px;
+	height: 200px;
+	list-style-type: none; 
+	/*border-bottom: 2px solid gray;*/
+	margin: 10px;
+	background-color: lightblue;
+}
+
+
+ul#MenuS li a{
+	display: block;
+	height: 60px;
+	font-weight: bolder;
+	font-size: 140%;
+	color: white;
+	background-color: lightblue;
+	text-align: center;
+	text-decoration: none;
+	/*border: 1px solid gray;*/
+	padding-top: 40px;
+	padding-bottom: ;
+	margin-top: 50px;
+
+}
+
+/*Selectores contextuales o Pseudo-clases
+
+oerden:1-a:visited,
+		2-a:link,
+		3-a:active,
+		4-a:hover*/
+
+ul#MenuS li a:visited{
+	background-color: whit;
+	color: gra;
+
+}
+
+ul#MenuS li a:hover{
+	background-color: white;
+	color: gray;
+}
+
+
+/*-------------------------------------FIN------------------------------*/
+
+/*ul#Menu li.no{
+	display: none;
+}
+
+!!!!ADVERTENCIA: Verificar por qué la Regla de estilo precedente no es necesaria?
+
+/*Fin-----------------------------------*/
+
+
+/*
+DESARROLLO:
+
+11/09/2020:; en 2 horas- Se definió el Menu principal con sus respectivos estilos.
+
+--------------------------------------------------------------------------------
+
+CONTINUAR AQUÍ: El 13/09/2020 en 2 horas se definió la disposición de los elementos del menú principal( Centrado, visualizacion de elemneto AAA + icono Menú)
+
+En la proxima entrada: continuar con la definición de las media querries para visualización responsiva de los elementos del Menú Principal.
+
+Se comentan las siguientes lineas para continuar con la definición del menu por defecto
+
+ul#Menu li.no{
+	display: none;
+}
+
+div#Content-Menu img{
+	float: right;
+	width: 35px;
+	padding: 10px;
+	cursor: pointer;
+	border: 1px solid white;
+}
+
+ul#Menu li.posicion-AAA{
+	position: absolute!important;
+	top: 0px;
+	left: 0px;
+	width: 70px;
+}
+-------------------------------------------------------------------------
+CONTINUAR AQUÍ: El 15/09/2020 ...en 2 hs se probaron alguna definiciones para ver su disposición. Se determina que para la página princincipal el nenú debe visualizarse de forma fija con el respectivo elemento de AAA + menu. 
+
+Se verifica cuestiones anteriores.
+
+Ocultar el Menú principal para mostar la barra responsiva, luego crear funcion JS para mostar el menu principal y ocultarlo nuevamente.
+
+Verificar el tema de la barra de scroll que a pesar de asignar ancho minimo esta no se visualiza por defecto: Qué sucede????;
+Verificado: Sucede que se le asignaba al div#Content-Menu una posicion Fija --> position: fixed; Por lo tanto al achicar el área de visualización, al ser FIJA su posción esta no genera barra de Scroll.
+------------------------------------------------------------------------
+
+CONTINUAR AQUÍ: 16/09/2020 En 3 hs. Se llevaron a cabo pruebas para la definicion del menú: Diseño, colores, sombras y demás;
+Se creo barra responsiva. 
+
+Se espera:
+crear barra responsiva fijA para anchos inferiores a 800px. EN HTMLse deja comentado la Barra Responsiva. Asignar estilos en css.
+
+--------------------------------------------------------------------------
+
+CONTINUAR AQUÍ: 17/09/2020 en 2hs se programo la interacción del munú, pero no se logra conseguir que el menú quede visibleara anchos superiores a800px, muy a pesar de encontrarse definido por DEFECTO. Se estima que puede haber un choque de estilos que no se logra ver. En cuanto a la propiedad overflow-y evaluarlo.
+
+Crear función JS para la visualización y ocultamiento del menú de navegación:
+
+Referencias y consideraciones:
+
+1- Cambiar icono del menú por la img. X
+
+2- lLa barra responsiva tiene por defecto la propiedad visibility: visible; En la función JS se le debe asignar la propiedad :HIDDEN;
+
+3-inmediatamente despues la función JS deberá cambiar la propiedad que posee por defecto el div#Content-Menu:visibility: hidden;
+por Visibility:visible;
+
+Entonces la Funcion JS debera asignar al hacer click las siguientes propiedades
+
+precargar img para luego cambiar
+
+if(Barra-Responsiva.style.visibility=="visible" && Content-Menu.style.visibility=="hidden"){
+	Barra-Responsiva.style.visibility="hidden";
+	Content-Menu.style.visibility="visible";
+}else{
+	Barra-Responsiva.style.visibility="visible";
+	Content-Menu.style.visibility="hidden";
+	
+}
+ !!!Atención: También agregar overflow-y: hidden; al BODY con JS.
+
+ ------------------------------------------------------------------------
+
+CONTINUAR AQUÍ: agragar precarga de imagen X y verificar funcionamiento de Función y la vizualización del menú de navegación para anchos superiores a 800px luego de quitarselo con la Funcion JS.
+
+24/09/2020 2 hs Resuelto se agrega @mediaQuerry para la visualizacion del menú para anchos superiores a la definicion por defecto.
+
+Se termina menú en socalo: de esta manera de ser necesario agregar enlaces basta con agregar la etiqueta correspondiente HTML
+
+--------------------------------------------------------------------------
+
+26/09/2020 en 2 hs se continuo con el diseño de estilos para menu socalo y algunas pseudo-clases que algunas no surten efecto efectivo. se define bandera en menu socalo para pseudo-clase :hover que es la única que funciona, se estima que de estar presentes los corrrespondientes enlaces disponibles las pseudo-clase funcionarían efectivamente.
+
+COLOR TIPOGRAFÍA TONOS BLANCOS claros:
+honeydew #F0fff0;
+seashell #FFF5EE;
+
+TONOS OSCUROS :
+slategray #708090
+
+
+---------------------------------------------------------------------------
+
+
+
+
+
+-----------------------------------------------------------------------
+
+!!!ATENCIÓN!!! Consideraciones: 
+
+1-Cuando a través de una media querry se asigna una propiedad que luego es cambiada desde JS, se deberá generar otra media querry para asignar nuevamente esa propiedad, caso contrario la propiedad no será considerada para anchos opuestos a la media querry inicial. Del mismo modo si se define por defecto propiedades con la imposición "!important" que luego quieran ser modificadas desde JS predominarán las definidas por defecto. por lo tanto, JS no surtirá efecto:;
+
+2-eL INDICE DE POSICIONAMIENTO MAYOR lo obtiene el ÚLTIMO elemento definido. Por lo tanto-Propiedad: POSITION: FIXED; Importante asignar LA propiedad Z-INDEX:SUPERIOR; para elementos definidos como FIXED.
+
+3-Si se define una media querry hasta un max de 800px, y luego se debe definir otra para contarrestar los efectos de la anterior definirla con una medida superior en 1px así:
+@media screen and (min-width:801px){}. Si no se hace de esta manera el elemento que se intenta modificar se verá justo en el corte 800px-800px.
+
+4- Cuando se linkea un recurso externo desde la página origen: cuando se vuelve a tras el menú mostrado a través de JS desparece por lo tanto, el usuario deberá visualizar el menú nuevamente. No así si el linkeo es sobre la misma página de origen, por lo que tendrá que quitaesele la visuaización del menú con JS.
+
+Es importante definir de antemano cual serán las dimensiones minimas y máximas de visualización responsiva, dada las resoluciones que pudieran limitar una adecuada renderización. Si los dispositivos o display tienen áreas de visualización inferiores a las definidas como mínimas en el diseño, son esos display los responsables de limitar las visualizaciones y no el diseño.
+*/ 
