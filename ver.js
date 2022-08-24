@@ -1,8 +1,8 @@
 var cerrar=new Image(256, 256);
-cerrar.src="img/cerrar.png";
+cerrar.src="cerrar.png";
 
 var abrir=new Image(256, 256);
-menu.src="img/menu-icon.png";
+menu.src="menu-icon.png";
 
 function visualizar()
 {	
